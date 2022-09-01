@@ -32,8 +32,9 @@ data1 = bus.read_i2c_block_data(0x39, 0x0E | 0x80, 2)
 # Convert the data
 ch0 = data[1] * 256 + data[0]
 ch1 = data1[1] * 256 + data1[0]
+ch2 = ch0 - ch1
 
 # Output data to screen
-print "Full Spectrum(IR + Visible) :%d lux" %ch0
-print "Infrared Value :%d lux" %ch1
-print "Visible Value :%d lux" %(ch0 - ch1)
+print("Full Spectrum(IR + Visible) :%d lux", ch0)
+print("Infrared Value :%d lux", ch1)
+print("Visible Value :%d lux", ch2)
