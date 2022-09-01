@@ -1,5 +1,5 @@
 // Code adapted from example by Gert van Loo & Dom from: http://elinux.org/Rpi_Low-level_peripherals#C_2
-
+// use gcc -Wall -o flash_led flash_led.c
 // flashes (blinks) LED on Raspberry PI 3 GPIO7
 
 #define BCM2708_PERI_BASE        0x20000000
@@ -85,8 +85,3 @@ void setup_io()
     // Always use volatile pointer!
     gpio = (volatile unsigned *)gpio_map;
 } // setup_io()
-
-if (gpio_map == MAP_FAILED) {
-      printf("mmap error %d\n", (int)gpio_map); //errno also set !
-      exit(-1);
-}
