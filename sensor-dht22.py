@@ -7,6 +7,7 @@
 
 import Adafruit_DHT
 import time
+import datetime
 
 DHT_SENSOR = Adafruit_DHT.DHT22
 GPIO_ID = 4
@@ -16,13 +17,13 @@ while True:
 
     if humidity is not None and temp_c is not None:
         temp_f = temp_c * (9 / 5) + 32
-        print("Sensor PIN  4: {:0.1f}C / {:0.1f}F -- Humidity={:0.1f}%".format(temp_c, temp_f, humidity))
+        print("Sensor PIN  4: {:} {:0.1f}C / {:0.1f}F -- Humidity={:0.1f}%".format(datetime.datetime.now(), temp_c, temp_f, humidity))
     #else:
     #    print("Failed to retrieve data from humidity sensor")
 
     h, t = Adafruit_DHT.read_retry(DHT_SENSOR, 20)
     if h is not None and t is not None:
         f = t * (9 / 5) + 32
-        print("Sensor PIN 20: {:0.1f}C / {:0.1f}F -- Humidity={:0.1f}%\n\n".format(t, f, h))
+        print("Sensor PIN 20: {:} {:0.1f}C / {:0.1f}F -- Humidity={:0.1f}%\n\n".format(datetime.datetime.now(), t, f, h))
 
     time.sleep(5.0)
