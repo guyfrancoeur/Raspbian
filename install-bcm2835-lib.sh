@@ -5,6 +5,7 @@ tar xvfz bcm2835-1.73.tar.gz
 cd bcm2835-1.73
 ./configure
 make
+sudo make check
 sudo make install
 cd
 rm bcm2835-1.73.tar.gz
