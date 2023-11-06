@@ -1,9 +1,9 @@
 // blink.c
 //
 // Example program for bcm2835 library
-// Blinks a pin on an off every 0.5 secs
+// Blinks a pin on an off
 //
-// After installing bcm2835, you can build this 
+// After installing bcm2835, you can build this
 // with something like:
 // gcc -o blink blink.c -l bcm2835
 // ./blink
